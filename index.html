@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -14,15 +14,18 @@
         return new Promise(function(resolve, reject) {
             const permissionResult = Notification.requestPermission(function(result) {
                 // Поддержка устаревшей версии с функцией обратного вызова.
+                console.log('1');
                 resolve(result);
             });
 
             if (permissionResult) {
+                console.log('2');
                 permissionResult.then(resolve, reject);
             }
         })
             .then(function(permissionResult) {
                 if (permissionResult !== 'granted') {
+                    console.log('3');
                     throw new Error('Permission not granted.');
                 }
             });
