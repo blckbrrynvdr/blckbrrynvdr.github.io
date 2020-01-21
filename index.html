@@ -8,46 +8,12 @@
     <title>Document</title>
 </head>
 <body>
-<a onclick="requestPermission()">SUDA IDI</a>
-<script>
-    function requestPermission() {
-        return new Promise(function(resolve, reject) {
-            const permissionResult = Notification.requestPermission(function(result) {
-                // Поддержка устаревшей версии с функцией обратного вызова.
-                console.log('1');
-                resolve(result);
-            });
+<button type="button" id="subscribe">Следить за изменениями</button>
 
-            if (permissionResult) {
-                console.log('2');
-                permissionResult.then(resolve, reject);
-            }
-        })
-            .then(function(permissionResult) {
-                if (permissionResult !== 'granted') {
-                    console.log('3');
-                    throw new Error('Permission not granted.');
-                }
-            });
-    }
-    function subscribeUserToPush() {
-        return navigator.serviceWorker.register('service-worker.js')
-            .then(function(registration) {
-                var subscribeOptions = {
-                    userVisibleOnly: true,
-                    applicationServerKey: btoa(
-                        'BEl62iUYgUivxIkv69yViEuiBIa-Ib9-SkvMeAtA3LFgDzkrxZJjSgSnfckjBJuBkr3qBUYIHBQFLXYp5Nksh8U'
-                    )
-                };
+<button type="button" id="send">Отправить</button>
 
-                return registration.pushManager.subscribe(subscribeOptions);
-            })
-            .then(function(pushSubscription) {
-                console.log('PushSubscription: ', JSON.stringify(pushSubscription));
-                return pushSubscription;
-            });
-    }
-    subscribeUserToPush();
-</script>
+<script></script>
+<script type="text/javascript" src="//www.gstatic.com/firebasejs/3.6.8/firebase.js"></script>
+<script type="text/javascript" src="/firebase_subscribe.js"></script>
 </body>
 </html>
