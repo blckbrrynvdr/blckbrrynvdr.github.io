@@ -6,9 +6,12 @@ firebase.initializeApp({
 // вообще, эту проверку должна делать библиотека Firebase, но она этого не делает
 if ('Notification' in window) {
     var messaging = firebase.messaging();
-
+    console.log(messaging);
+    console.log('-----');
+    console.log(Notification.permission);
     // пользователь уже разрешил получение уведомлений
     // подписываем на уведомления если ещё не подписали
+
     if (Notification.permission === 'granted') {
         subscribe();
     }
