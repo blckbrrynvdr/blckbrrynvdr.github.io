@@ -15,7 +15,7 @@ $(function() {
                     "icon": "https://eralash.ru.rsz.io/sites/all/themes/eralash_v5/logo.png?width=40&height=40",
                     "click_action": "http://eralash.ru/"
                 },
-                "to": $('#to')
+                "to": $('#to').val()
             }
         })
     })
