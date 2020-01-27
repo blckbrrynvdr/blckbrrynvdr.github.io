@@ -1,5 +1,5 @@
 firebase.initializeApp({
-    messagingSenderId: '<SENDER_ID>'
+    messagingSenderId: '1009541058929'
 });
 
 // браузер поддерживает уведомления
