@@ -5,7 +5,7 @@ $(function() {
             type: 'POST',
             url: url,
             headers: {
-                Authentication: 'AAAA6w1WEXE:APA91bEi_7jXUxn4h3ou-kXUaMWcnpRDmmx7nuL1_pOrjzL4BzuUWzjfV6Liv0ufJLTMfyDd2RJ1_NBRH0Dp74GO0Ud1n08aebHoYAWqpZ9wptvkuQISQxcYaokrS8C7Vpr2EnittJL4'
+                Authorization: 'AAAA6w1WEXE:APA91bEi_7jXUxn4h3ou-kXUaMWcnpRDmmx7nuL1_pOrjzL4BzuUWzjfV6Liv0ufJLTMfyDd2RJ1_NBRH0Dp74GO0Ud1n08aebHoYAWqpZ9wptvkuQISQxcYaokrS8C7Vpr2EnittJL4'
             },
             contentType: 'application/json',
             data: {
